@@ -1,0 +1,15 @@
+services:
+  nginx:
+    build: ./
+    #volumes:
+    #  - static_volume:/home/app/web/staticfiles
+    #  - media_volume:/home/app/web/mediafiles
+    ports:
+      - 2000:80
+
+  #db:
+  #  image: postgres:latest
+  #  volumes:
+  #    - postgres_data:/var/lib/postgresql/data/
+  #  env_file:
+  #    - ./.env
