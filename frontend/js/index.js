@@ -2,8 +2,6 @@ import toastManager from "./classes/Toast.js";
 import stateManager from "./classes/StateManager.js";
 import { endpoints, historyState } from "./utils/utils.js";
 
-// test responsive
-// test all cases
 document.addEventListener("DOMContentLoaded", async () => {
 
     stateManager.selfFromSessionStorage();
