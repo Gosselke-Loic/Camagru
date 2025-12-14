@@ -54,8 +54,4 @@ export default class TransporterClass {
             return (false);
         };
     }
-
-    validationAccountMail() {
-
-    }
 }
