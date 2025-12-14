@@ -73,7 +73,7 @@ async function main(): Promise<void> {
     .on("request", (req, res) => { 
         const request = req;
 
-        const { url, method } = request;
+        const { url, method, headers } = request;
         if ( !url || !method ) {
             const message = JSON.stringify({ message: "Bad Request" });
             res.writeHead(400, "Bad Request", {
@@ -84,12 +84,9 @@ async function main(): Promise<void> {
             return ;
         };
 
-        const { headers } = request;
-
         const route = getRoute(url, method);
         const accessTokenFromHeaders = getAccessTokenFromHeaders(headers["authorization"]);
 
-        console.log( "url: ", url, " method: ", method, " secure route finded: ", route );
         if (route) { 
             if (accessTokenFromHeaders) {
                 const fingerprint = getCookie(headers.cookie, "Secure-Fgp");
